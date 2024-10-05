@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Part 1: LinearLayout with Three Buttons Horizontally -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nút 1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nút 2"
+            android:id="@+id/button2"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nút 3"
+            android:id="@+id/button3"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+
+            android:id="@+id/imageView6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/avatar1"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="Hình ảnh người dùng" />
+
+        <TextView
+            android:id="@+id/textViewUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên người dùng"
+            android:textSize="16sp"
+            android:layout_below="@id/imageView6"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp" />
+    </RelativeLayout>
+
+    <!-- Phần 3: ConstraintLayout với EditText và Hai Nút -->
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- EditText để Nhập Tên Người Dùng -->
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên người dùng"
+            android:padding="12dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Nút "Lưu" -->
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Lưu"
+            app:layout_constraintTop_toBottomOf="@id/editTextName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonCancel"
+            app:layout_constraintWidth_percent="0.45"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Nút "Hủy" -->
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            app:layout_constraintTop_toBottomOf="@id/editTextName"
+            app:layout_constraintStart_toEndOf="@id/buttonSave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.45"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
